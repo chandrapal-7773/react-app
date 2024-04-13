@@ -1,26 +1,37 @@
+     
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: /public/
+    destination: /var/www/html/react-app
+  - source: /appspec.yml
+    destination: /var/www/html/react-app
+  - source: /package.json
+    destination: /var/www/html/react-app
+  - source: /package-lock.json
+    destination: /var/www/html/react-app
+  - source: /scripts/
+    destination: /var/www/html/react-app
+  - source: /src/
     destination: /var/www/html/react-app
 permissions:
   - object: /var/www/html/react-app
     pattern: "**"
-    owner: nginx
-    group: nginx
+    owner: ubuntu
+    group: ubuntu
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
   AfterInstall:
     - location: scripts/build_react_app.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
   ApplicationStart:
     - location: scripts/configure_nginx.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
     - location: scripts/start_nginx.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
