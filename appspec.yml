@@ -3,7 +3,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/react-app 
+    destination: /var/www/html/react-app
+    overwrite: true
+file_exists_behavior: OVERWRITE
 permissions:
   - object: /
     pattern: "**"
@@ -25,3 +27,6 @@ hooks:
     - location: scripts/start_nginx.sh
       timeout: 300
       runas: root
+      
+      
+      
