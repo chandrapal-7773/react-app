@@ -15,11 +15,7 @@ permissions:
      type:
        - file
 hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies.sh
-      timeout: 300
-      runas: root
-  AfterInstall:
+   AfterInstall:
     - location: scripts/build_react_app.sh
       timeout: 300
       runas: root
