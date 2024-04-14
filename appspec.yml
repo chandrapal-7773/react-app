@@ -7,8 +7,8 @@ files:
 permissions:
   - object: /
     pattern: "**"
-    owner: ubuntu
-    group: ubuntu
+    owner: root
+    group: root
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
