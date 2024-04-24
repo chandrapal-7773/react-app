@@ -1,1 +1,1 @@
-
+systemctl reload nginx
