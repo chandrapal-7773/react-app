@@ -2,17 +2,18 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html
- hooks:
+    destination: /var/www/html/WordPress
+hooks:
   BeforeInstall:
-    - location: scripts/configure_nginx.sh
+    - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/build_react_app.sh
+    - location: scripts/change_permissions.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/start_nginx.sh
+    - location: scripts/start_server.sh
       timeout: 300
       runas: root
+
