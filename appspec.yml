@@ -10,7 +10,7 @@ permissions:
     group: nginx
 hooks:
   BeforeInstall:
-    - location: scripts/clear_nginx_cache.sh
+    - location: scripts/configure_nginx.sh
       timeout: 300
       runas: root
   AfterInstall:
