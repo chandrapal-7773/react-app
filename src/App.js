@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-         Majja Marro
+         Hello Everyone
         </a>
       </header>
     </div>
