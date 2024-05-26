@@ -1,6 +1,4 @@
-# build_react_app.sh
 #!/bin/bash
-systemctl restart nginx
 
-
-
+cd /var/www/html/my-react-app
+npm install --production
